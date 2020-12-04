@@ -5,6 +5,8 @@
  */
 package Bai72;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author vmtni
@@ -13,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         GiaiPhuongTrinh ui = new GiaiPhuongTrinh();
         ui.setSize(400,300);
+        ui.setMinimumSize(new Dimension(400,300));
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);
     }

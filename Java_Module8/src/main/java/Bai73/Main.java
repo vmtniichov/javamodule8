@@ -5,10 +5,19 @@
  */
 package Bai73;
 
+import java.awt.Dimension;
+import java.awt.Frame;
+
 /**
  *
  * @author vmtni
  */
 public class Main {
-    
+    public static void main(String[] args) {
+        Calculate ui = new Calculate();
+        ui.setSize(400, 300);
+        ui.setMinimumSize(new Dimension(400, 300));
+        ui.setLocationRelativeTo(null);
+        ui.setVisible(true);
+    }
 }
