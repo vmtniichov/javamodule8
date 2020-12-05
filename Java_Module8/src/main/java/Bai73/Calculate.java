@@ -102,7 +102,7 @@ public class Calculate extends JFrame{
         con.add(pnTop, BorderLayout.NORTH);
         con.add(pnCenter, BorderLayout.CENTER);
         con.add(pnLeft, BorderLayout.WEST);
-        //END
+        //CONTAINER-END
         
     }
 
