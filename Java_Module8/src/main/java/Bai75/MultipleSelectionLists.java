@@ -7,15 +7,20 @@ package Bai75;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dialog;
 import java.awt.GridLayout;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.plaf.basic.BasicOptionPaneUI;
 
 /**
  *
@@ -27,6 +32,7 @@ public class MultipleSelectionLists extends JFrame{
     DefaultListModel model = new DefaultListModel();
     JList<String> colorList = new JList<>(colour);
     JList<String> copyList = new JList<>();
+    //JLabel lbl = new JLabel("Check");
     
     public MultipleSelectionLists(){
         super("Multiple Selection Lists");
@@ -38,23 +44,28 @@ public class MultipleSelectionLists extends JFrame{
         Container con = getContentPane();
         con.setLayout(new GridLayout(1,3));
         JPanel pnCenter= new JPanel();
+        
         JScrollPane scrollPane = new JScrollPane(colorList);
+        JScrollPane scrollPaneCopy = new JScrollPane(copyList);
         
         pnCenter.add(btnCopy);
         con.add(scrollPane);
-        con.add(pnCenter, BorderLayout.CENTER);
-        con.add(copyList);
+        con.add(pnCenter);
+        con.add(scrollPaneCopy);
     }
 
     private void addEvents() {
         btnCopy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                StringBuilder sb = new StringBuilder();
-                //Get the item from JList and add it to sb
-                int idx = colorList.getSelectedIndex();
-                sb.append(colour[idx]);
-                //Haven't done yet
+                String[] copyColour = new String[colour.length];
+                int[] indices = colorList.getSelectedIndices();
+                for (int i = 0; i < indices.length; i++){
+                    copyColour[i] = colour[indices[i]];
+                }
+                copyList.setListData(copyColour);
+                //lbl.setText(String.valueOf());
+                
             }
         });
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bai75;
+package Bai76;
 
 import java.awt.Dimension;
 
@@ -13,7 +13,7 @@ import java.awt.Dimension;
  */
 public class Main {
     public static void main(String[] args) {
-        MultipleSelectionLists ui = new MultipleSelectionLists();
+        JCBBox ui = new JCBBox();
         ui.setSize(350, 150);
         ui.setMinimumSize(new Dimension(300,150));
         ui.setLocationRelativeTo(null);
